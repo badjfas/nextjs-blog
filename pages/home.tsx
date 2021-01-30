@@ -1,5 +1,7 @@
+import { Layout } from "../components/Layout";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <Layout>sdfadsfasfas</Layout>;
 };
 
 export default Home;

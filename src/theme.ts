@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import { red } from "@material-ui/core/colors";
 
 // Create a theme instance.
@@ -16,6 +16,14 @@ const theme = createMuiTheme({
     background: {
       default: "#fff",
     },
+  },
+});
+
+export const useGlobalStyles = makeStyles({
+  root: {
+    padding: 0,
+    margin: 0,
+    boxSizing: "border-box",
   },
 });
 

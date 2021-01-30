@@ -1,13 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../src/theme";
+import theme, { useGlobalStyles } from "../src/theme";
+import { Grid } from "@material-ui/core";
 
-export default function MyApp(props) {
+const MyApp = (props) => {
   const { Component, pageProps } = props;
-
+  const { root } = useGlobalStyles();
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
@@ -26,10 +26,13 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <Grid container className={root}>
+          <Component {...pageProps} />
+        </Grid>
       </ThemeProvider>
     </React.Fragment>
   );
-}
+};
+
+export default MyApp;
