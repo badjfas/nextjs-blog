@@ -11,9 +11,9 @@ const DynamicComponentWithNoSSR = dynamic(
 const Home = () => {
   return (
     <Layout>
-      <div style={{ width: "85%" }} id="editor"></div>
-
-      <DynamicComponentWithNoSSR />
+      <div style={{ width: "85%" }}>
+        <DynamicComponentWithNoSSR />
+      </div>
     </Layout>
   );
 };
